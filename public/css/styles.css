@@ -1,34 +1,13 @@
-body {
-  font-family: "Poppins", serif;
-  font-size: 24px;
+.header h1 {
+  color: rgb(245, 241, 241);
 }
-body {
-  margin: 20px;
+footer .footer {
+  color: white;
+  border-radius: 5px 5px 0 0;
 }
-html {
-  margin: 0px;
-  padding: 0px;
+.container {
+  min-height: 58vh;
 }
 .header {
-  display: flex;
-}
-.header-menu {
-  display: flex;
-  width: 50%;
-  align-items: center;
-}
-.header-menu li {
-  padding-inline: 10px;
-  line-height: 1.1em;
-}
-.header-text {
-  width: 50%;
-  margin: 0px;
-  line-height: 1.1em;
-}
-.no-bullet {
-  list-style-type: none;
-}
-.footer {
-  background-color: black;
+  border-radius: 0 0 5px 5px;
 }
