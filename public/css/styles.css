@@ -1,0 +1,34 @@
+body {
+  font-family: "Poppins", serif;
+  font-size: 24px;
+}
+body {
+  margin: 20px;
+}
+html {
+  margin: 0px;
+  padding: 0px;
+}
+.header {
+  display: flex;
+}
+.header-menu {
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+.header-menu li {
+  padding-inline: 10px;
+  line-height: 1.1em;
+}
+.header-text {
+  width: 50%;
+  margin: 0px;
+  line-height: 1.1em;
+}
+.no-bullet {
+  list-style-type: none;
+}
+.footer {
+  background-color: black;
+}
