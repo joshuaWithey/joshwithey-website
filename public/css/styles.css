@@ -1,13 +1,12 @@
+.header {
+  border-radius: 0 0 5px 5px;
+}
 .header h1 {
   color: rgb(245, 241, 241);
+  padding: 0px;
 }
+
 footer .footer {
   color: white;
   border-radius: 5px 5px 0 0;
-}
-.container {
-  min-height: 58vh;
-}
-.header {
-  border-radius: 0 0 5px 5px;
 }
