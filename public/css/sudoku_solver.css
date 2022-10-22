@@ -11,3 +11,7 @@ video {
 .main-section {
   min-height: 80vh;
 }
+
+#info {
+  text-align: center;
+}

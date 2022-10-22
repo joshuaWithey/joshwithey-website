@@ -100,9 +100,7 @@ const board = [
   ],
 ];
 
-// const board = Array(9)
-//   .fill()
-//   .map(() => Array(9).fill([0, 0]));
+const info = document.getElementById("info");
 let width = 480;
 let height = 640;
 // Import keras model
@@ -180,6 +178,7 @@ async function startVideoProcessing() {
   approx = new cv.Mat();
 
   puzzleSolved = false;
+  info.innerHTML = "Searching...";
   requestAnimationFrame(processVideo);
 }
 async function processVideo() {
@@ -221,8 +220,10 @@ async function processVideo() {
     } else {
       resetBoard();
       puzzleSolved = false;
+      info.innerHTML = "Searching...";
     }
     if (puzzleSolved) {
+      info.innerHTML = "Puzzle solved!";
       overlayPuzzle(corners);
     }
     cv.imshow("videoOutput", src);
