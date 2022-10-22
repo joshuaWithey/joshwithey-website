@@ -14,4 +14,10 @@ video {
 
 #info {
   text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #343a40;
+  padding-top: 10px;
+  font-size: 1.5em;
 }
