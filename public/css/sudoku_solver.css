@@ -1,3 +1,13 @@
 .jumbotron {
   margin-bottom: 0px;
 }
+
+video {
+  height: 100%;
+}
+.footer {
+  margin-top: -6px;
+}
+.main-section {
+  min-height: 80vh;
+}
