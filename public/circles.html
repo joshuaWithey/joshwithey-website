@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/circles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div id="canvas" onclick="drawCircle()"></div>
+      <div id="controls">
+        <div class="buttons">
+          <button onclick="undo()">Undo</button>
+          <button onclick="redo()">Redo</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const undoStack = [];
+      const redoStack = [];
+      index = 0;
+      function drawCircle() {
+        const canvas = document.getElementById("canvas");
+        const x = event.clientX - 5;
+        const y = event.clientY - 5;
+        canvas.innerHTML += `<div id="circle" style="position: absolute; top: ${y}px; left:${x}px;"></div>`;
+        undoStack.push([[x, y], "draw"]);
+        index += 1;
+      }
+      function undo() {
+        // Remove last child from canvas
+        const canvas = document.getElementById("canvas");
+        const circle = canvas.lastChild;
+        if (undoStack.length == 0) {
+          console.log("No undos");
+          return;
+        }
+        // If im pushing the same action
+        circle.remove();
+        redoStack.push(undoStack.pop());
+      }
+      function redo() {
+        if (redoStack.length == 0) {
+          console.log("No redos");
+          return;
+        }
+        const canvas = document.getElementById("canvas");
+        const coords = redoStack.pop();
+        canvas.innerHTML += `<div id="circle" style="position: absolute; posi top: ${coords[0][1]}px; left:${coords[0][0]}px;"></div>`;
+        undoStack.push(coords);
+      }
+    </script>
+  </body>
+</html>

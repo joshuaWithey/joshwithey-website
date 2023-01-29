@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    canvas {
+      border: solid;
+      height: 400px;
+      width: 400px;
+    }
+    .main {
+      display: flex;
+      height: 98vh;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <canvas id="canvas" width="400px" height="400px"></canvas>
+    </div>
+    <script>
+      const canvasElement = document.getElementById("canvas");
+      const context = canvasElement.getContext("2d");
+
+      const pi = Math.PI;
+
+      var angle = 0;
+      var x = 300;
+      var y = 200;
+      const coords = [300, 200];
+      const center = 200;
+
+      context.beginPath();
+      context.moveTo(center, center);
+      context.lineTo(x, y);
+      context.stroke();
+
+      function getMatrix() {
+        return [
+          [Math.cos(angle), -1 * Math.sin(angle)],
+          [Math.sin(angle), Math.cos(angle)],
+        ];
+      }
+      matrixMultiply(getMatrix(), [x, y]);
+      function matrixMultiply(a, b) {
+        console.log(a);
+        output = [];
+        // for each row in a
+        for (let i = 0; i < a.length; i++) {
+          output.push(dotProduct(a[i], b));
+        }
+        return output;
+      }
+
+      function dotProduct(a, b) {
+        var total = 0;
+        for (let i = 0; i < a.length; i++) {
+          total += a[i] * b[i];
+        }
+        return total;
+      }
+
+      function animate() {
+        angle = ((angle + (1 / 180) * pi) % 2) * pi;
+
+        context.beginPath();
+        context.moveTo(center, center);
+        context.lineTo(x, y);
+        context.stroke();
+      }
+      setInterval(animate, 0.0005);
+    </script>
+  </body>
+</html>
