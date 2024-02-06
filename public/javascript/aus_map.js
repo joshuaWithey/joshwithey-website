@@ -12,7 +12,7 @@ function style(feature) {
     opacity: 1,
     color: "white",
     dashArray: "3",
-    fillOpacity: 0.7,
+    fillOpacity: 0,
     fillColor: "#ffffff",
   };
 }
@@ -27,6 +27,7 @@ function onEachFeature(feature, layer) {
   layer.on({
     mouseover: highlightFeature,
     mouseout: resetHighlight,
+    click: onClickNew,
   });
 }
 
@@ -45,4 +46,9 @@ function highlightFeature(e) {
 
 function resetHighlight(e) {
   geojson.resetStyle(e.target);
+}
+
+function onClickNew(e) {
+  console.log(e);
+  //geojson.resetStyle(e.target);
 }

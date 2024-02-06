@@ -1,0 +1,36 @@
+body {
+  margin: 0px;
+  font-family: "Montserrat";
+  padding: 20px;
+  background-image: url("../resources/night-sky.png");
+}
+#information {
+  color: white;
+  margin-bottom: 40px;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+}
+.counter h4 {
+  text-align: center;
+  margin: 0px;
+}
+#globeViz {
+  display: flex;
+  justify-content: center;
+}
+.scene-container canvas {
+  border-radius: 1000px;
+}
+#currentCountry {
+  width: 200px;
+  text-align: center;
+}
+.controlIcon {
+  color: white;
+  padding: 10px;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}

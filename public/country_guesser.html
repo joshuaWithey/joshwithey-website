@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Globe</title>
+    <link
+      rel="stylesheet"
+      href="resources/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link rel="stylesheet" href="css/country_guesser.css" />
+    <script src="//unpkg.com/globe.gl"></script>
+  </head>
+  <body>
+    <div id="information">
+      <div class="controls">
+        <!-- <button id="prev">Previous</button> -->
+        <a class="controlIcon" id="prev" href="#">
+          <i class="fa fa-chevron-left"></i>
+        </a>
+        <h2 id="currentCountry"></h2>
+        <a class="controlIcon" id="next" href="#">
+          <i class="fa fa-chevron-right"></i>
+        </a>
+      </div>
+      <div class="counter">
+        <h4>
+          <span id="changingCounter">0</span>/<span id="staticCounter"></span>
+        </h4>
+      </div>
+    </div>
+    <div id="globeViz"></div>
+
+    <script src="javascript/country_guesser.js"></script>
+  </body>
+</html>
